@@ -1,0 +1,29 @@
+import java.util.*;
+class InsertArray{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Size of the Array:");
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        System.out.println("Enter the Elements into Array");
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        System.out.println("Enter the inserting position:");
+        int position=sc.nextInt();
+        System.out.println("Enter the value into inserting position:");
+        int value=sc.nextInt();
+        int[] extraArray=new int[arr.length+1];
+        for(int i=0;i<position;i++){
+            extraArray[i]=arr[i];
+        }
+        extraArray[position]=value;
+        for(int i=position;i<arr.length;i++){
+            extraArray[i+1]=arr[i];
+        }
+        System.out.println("Enter the after inserting a new value:");
+        for(int i=0;i<extraArray.length;i++){
+            System.out.print(extraArray[i]+" ");
+        }
+    }
+}
